@@ -1,0 +1,56 @@
+* {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input {
+    font-size: 2rem;
+    width: 15rem;
+    height: 3rem;
+    padding: 0.3rem;
+    margin-right: 1rem;
+    color: rgb(37, 37, 37);
+    border: 0.2rem solid orange;
+    border-radius: 0.2rem;
+    transition: 0.15s;
+}
+
+input:hover {
+    transition: 0.15s;
+    border: 0.2rem solid rgb(255, 145, 0);
+    background-color: rgba(126, 115, 115, 0.401);
+}
+
+button {
+    width: 7rem;
+    height: 3rem;
+    padding: 0.3rem;
+    margin: 0;
+    font-size: 1.2rem;
+    color: rgb(247, 35, 35);
+    background: linear-gradient(rgb(255, 166, 0), rgba(255, 166, 0, 0.476));
+    border: 0.1rem white solid;
+    border-radius: 1rem;
+    text-decoration: solid;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+button:hover {
+    transition: 0.15s;
+    box-shadow: 0.1rem 0.1rem grey;
+}
+
+.inss {
+    padding: 0.3rem;
+    border: 0.1rem solid rgb(209, 189, 151);
+    border-radius: 0.3rem;
+    transition: 0.15s;
+}
+
+.inss:hover {
+    border: 0.1rem solid rgb(255, 183, 49);
+    transition: 0.15s;
+}
