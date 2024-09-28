@@ -3,12 +3,14 @@ let inputNS;
 const btn = document.getElementById("s-n")
 const btn2 = document.getElementById("n-s")
 
+//main function to translate the sentence to the code. 
 function translateSN() {
     inputSN = document.getElementById("s-nInput").value;
     const translated = translate(inputSN);
     document.getElementById("s-nResult").innerText = translated;
 }
 
+//translate the sentence to code. 
 function translate(input) {
     const translationMap = {
         'a': '92-', 'A': '92-', 'b': '63-', 'B': '63-',
@@ -32,6 +34,7 @@ function translate(input) {
 
 btn.addEventListener("click", translateSN)
 
+// the funciton for translate the code back to the text. 
 function translateNS(input) {
     const translationMap = {
         '92': 'a', '63': 'b',
@@ -52,6 +55,8 @@ function translateNS(input) {
 
     return input.split('-').map(num => translationMap[num] || '').join('');
 }
+
+//the main function for translate back to the number
 function translateNSMain() {
     inputNS = document.getElementById("n-sInput").value;
     const translated = translateNS(inputNS);
@@ -59,3 +64,24 @@ function translateNSMain() {
 }
 
 btn2.addEventListener("click", translateNSMain);
+
+//copy button for the code so the user doens't have to ctrl + c and ctrl + v the code
+document.getElementById('copyButton1').addEventListener('click', function () {
+    const textToCopy = document.getElementById('s-nResult').innerText;
+
+    navigator.clipboard.writeText(textToCopy);
+});
+
+//copy button for the translated text
+document.getElementById('copyButton2').addEventListener('click', function () {
+    const textToCopy = document.getElementById('n-sResult').innerText;
+
+    navigator.clipboard.writeText(textToCopy);
+});
+
+// paste button
+document.getElementById("pasteButton").addEventListener("click", async () => {
+    document.getElementById("n-sInput").value = '';
+    const text = await navigator.clipboard.readText();
+    document.getElementById("n-sInput").value += text;
+})
