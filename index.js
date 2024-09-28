@@ -1,103 +1,61 @@
-//sentence to number
-const btnSn = document.getElementById("s-n")
-let valueOfInputSn = document.getElementById("s-nInput")
-let resultSn = document.getElementById("s-nResult")
+let inputSN;
+let inputNS;
+const btn = document.getElementById("s-n")
+const btn2 = document.getElementById("n-s")
 
-//number to sentence button
-const btnNs = document.getElementById("n-s")
-let valueOfInputNs = document.getElementById("n-sInput")
-let resultNs = document.getElementById("n-sResult")
-
-//functions
-function snTranslation() { //s-n function. 
-    /* So in this funciton. I split the sentence that the user typed. 
-
-    Example: user typed: "hello there" result: "h","e","l","l","o"," ","t","h","e","r","e"
-    
-    And then I tired to convert them into numbers. 
-    */
-    const myArray = valueOfInputSn.split("");
-    for (let i of myArray) {
-        if (i == 'a' || 'A') {
-            i = '92-' // every hyphen is used to split numbers to sentences later
-        }
-        else if (i == 'b' || 'b') {
-            i = '63-'
-        }
-        else if (i == 'c' || 'C') {
-            i = '35-'
-        }
-        else if (i == 'd' || 'D') {
-            i = '11-'
-        }
-        else if (i == 'e' || 'E') {
-            i = '19-'
-        }
-        else if (i == 'f' || 'F') {
-            i = '43-'
-        }
-        else if (i == 'g' || 'G') {
-            i = '70-'
-        }
-        else if (i == 'h' || 'H') {
-            i = '52-'
-        }
-        else if (i == 'i' || 'I') {
-            i = '99-'
-        }
-        else if (i == 'j' || 'J') {
-            i = '22-'
-        }
-        else if (i == 'k' || 'K') {
-            i = '58-'
-        }
-        else if (i == 'l' || 'L') {
-            i = '45-'
-        }
-        else if (i == 'm' || 'M') {
-            i = '17-'
-        }
-        else if (i == 'n' || 'N') {
-            i = '15-'
-        }
-        else if (i == 'o' || 'O') {
-            i = '24-'
-        }
-        else if (i == 'p' || 'P') {
-            i = '37-'
-        }
-        else if (i == 'q' || 'Q') {
-            i = '36-'
-        }
-        else if (i == 'r' || 'R') {
-            i = '31-'
-        }
-        else if (i == 's' || 'S') {
-            i = '32-'
-        }
-        else if (i == 't' || 'T') {
-            i = '49-'
-        }
-        else if (i == 'u' || 'U') {
-            i = '56-'
-        }
-        else if (i == 'v' || 'V') {
-            i = '83-'
-        }
-        else if (i == 'w' || 'W') {
-            i = '20-'
-        }
-        else if (i == 'x' || 'X') {
-            i = '30-'
-        }
-        else if (i == 'y' || 'Y') {
-            i = '90-'
-        }
-        else if (i == 'z' || 'Z') {
-            i = '98-'
-        }
-        else if (i == ' ') {
-            i = '0-' // 0 means space
-        }
-    }
+function translateSN() {
+    inputSN = document.getElementById("s-nInput").value;
+    const translated = translate(inputSN);
+    document.getElementById("s-nResult").innerText = translated;
 }
+
+function translate(input) {
+    const translationMap = {
+        'a': '92-', 'A': '92-', 'b': '63-', 'B': '63-',
+        'c': '35-', 'C': '35-', 'd': '11-', 'D': '11-',
+        'e': '19-', 'E': '19-', 'f': '43-', 'F': '43-',
+        'g': '70-', 'G': '70-', 'h': '52-', 'H': '52-',
+        'i': '99-', 'I': '99-', 'j': '22-', 'J': '22-',
+        'k': '58-', 'K': '58-', 'l': '45-', 'L': '45-',
+        'm': '17-', 'M': '17-', 'n': '15-', 'N': '15-',
+        'o': '24-', 'O': '24-', 'p': '37-', 'P': '37-',
+        'q': '36-', 'Q': '36-', 'r': '31-', 'R': '31-',
+        's': '32-', 'S': '32-', 't': '49-', 'T': '49-',
+        'u': '56-', 'U': '56-', 'v': '83-', 'V': '83-',
+        'w': '20-', 'W': '20-', 'x': '30-', 'X': '30-',
+        'y': '90-', 'Y': '90-', 'z': '98-', 'Z': '98-',
+        ' ': '0-' // 0 means space    
+    };
+
+    return input.split('').map(char => translationMap[char] || '').join('');
+}
+
+btn.addEventListener("click", translateSN)
+
+function translateNS(input) {
+    const translationMap = {
+        '92': 'a', '63': 'b',
+        '35': 'c', '11': 'd',
+        '19': 'e', '43': 'f',
+        '70': 'g', '52': 'h',
+        '99': 'i', '22': 'j',
+        '58': 'k', '45': 'l',
+        '17': 'm', '15': 'n',
+        '24': 'o', '37': 'p',
+        '36': 'q', '31': 'r',
+        '32': 's', '49': 't',
+        '56': 'u', '83': 'v',
+        '20': 'w', '30': 'x',
+        '90': 'y', '98': 'z',
+        '0': ' ' // 0 means space    
+    };
+
+    return input.split('-').map(num => translationMap[num] || '').join('');
+}
+function translateNSMain() {
+    inputNS = document.getElementById("n-sInput").value;
+    const translated = translateNS(inputNS);
+    document.getElementById("n-sResult").innerText = translated;
+}
+
+btn2.addEventListener("click", translateNSMain);
