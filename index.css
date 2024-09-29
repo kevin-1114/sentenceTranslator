@@ -1,56 +1,63 @@
 * {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
+            font-family: "Fredoka", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
 
-input {
-    font-size: 2rem;
-    width: 15rem;
-    height: 3rem;
-    padding: 0.3rem;
-    margin-right: 1rem;
-    color: rgb(37, 37, 37);
-    border: 0.2rem solid orange;
-    border-radius: 0.2rem;
-    transition: 0.15s;
-}
+        body {
+            background-color: #404E5C;
+        }
 
-input:hover {
-    transition: 0.15s;
-    border: 0.2rem solid rgb(255, 145, 0);
-    background-color: rgba(126, 115, 115, 0.401);
-}
+        input {
+            margin: 0.2rem;
+            padding: 0.5rem;
+            background-color: #B7C3F3;
+            border: 0.2rem solid white;
+            border-radius: 0.3rem;
+            color: white;
+            font-size: large;
+        }
 
-button {
-    width: 7rem;
-    height: 3rem;
-    padding: 0.3rem;
-    margin: 0;
-    font-size: 1.2rem;
-    color: rgb(247, 35, 35);
-    background: linear-gradient(rgb(255, 166, 0), rgba(255, 166, 0, 0.476));
-    border: 0.1rem white solid;
-    border-radius: 1rem;
-    text-decoration: solid;
-    cursor: pointer;
-    transition: 0.15s;
-}
+        input:hover {
+            background-color: #5e688e;
+            transition: 0.15s;
+            box-shadow: 0.1rem 0.1rem rgb(213, 163, 163);
+        }
 
-button:hover {
-    transition: 0.15s;
-    box-shadow: 0.1rem 0.1rem grey;
-}
+        button {
+            background-color: #B7C3F3;
+            border: 0.2rem solid white;
+            border-radius: 0.3rem;
+            color: white;
+            transition: 0.15s;
+            margin: 0.2rem;
+            padding: 0.5rem;
+            font-size: large;
+        }
 
-.inss {
-    padding: 0.3rem;
-    border: 0.1rem solid rgb(209, 189, 151);
-    border-radius: 0.3rem;
-    transition: 0.15s;
-}
+        button:hover {
+            background-color: #5e688e;
+            transition: 0.15s;
+            box-shadow: 0.1rem 0.1rem rgb(213, 163, 163);
+        }
 
-.inss:hover {
-    border: 0.1rem solid rgb(255, 183, 49);
-    transition: 0.15s;
-}
+        button:active {
+            margin: 0.4rem;
+            padding: 0.3rem;
+        }
+
+        p {
+            margin: 0.2rem;
+        }
+
+        .result {
+            color: aquamarine;
+            font-size: larger;
+        }
+
+        #n-sResult {
+            font-size: large;
+        }
