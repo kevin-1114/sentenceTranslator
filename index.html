@@ -9,23 +9,26 @@
     <!-- Google font links（don't worry） -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <div id="sentence-number">
         <!-- These are inputs, buttons, resutls field of 
          sentence to number form. s-n means sentenceto number -->
-        <input type="text" placeholder="sentence" id="s-nINput"> <button id="s-n">Translate</button>
-        <p id="s-nResult"></p>
+        <input type="text" placeholder="sentence" id="s-nInput"> <button id="s-n">Translate</button>
+        <button id="copyButton1">Copy</button>
         <p class="inss"><span id="ins">INSTRUCTIONS:</span>copy exactly the numbers shown with the
             hyphens you can translate them back using the input box below</p>
+        <p id="s-nResult" class="result"></p>
     </div>
+    <br>
     <div id="number-sentence">
         <!-- These are the oppsite of s-n, n-s means number to sentence.  -->
-        <input type="number" placeholder="number" id="n-sInput"> <button id="n-s">Translate</button>
-        <p class="inss">This is the secret message</p>
-        <p id="n-sResult"></p>
+        <input type="text" placeholder="number" id="n-sInput"> <button id="n-s">Translate</button>
+        <p class="inss">This is the secret message:</p>
+        <p id="n-sResult" class="result"></p>
     </div>
     <script src="index.js"></script>
 </body>
